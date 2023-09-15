@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Conversion Results</title>
+   <link rel="stylesheet" type="text/css" href="/final.css">
+</head>
+<body>
+   <h1>Conversion Results</h1>
+   <h2>Conversion from <%= selectedCurrency %> to Other Currencies and then back to NGN</h2>
+   <table class="tabili">
+       <tr>
+           <th>Selected Currency</th>
+           <th>Converted Amount</th>
+           <th>Currency</th>
+           <th>Converted Amount in each currency</th>
+           <th>Converted Amount in (NGN)</th>
+           <th>Profit</th> <!-- New column for Profit -->
+       </tr>
+       <% Object.keys(results).forEach(function(currency) { %>
+           <tr>
+               <td><%= selectedCurrency %></td>
+               <td><%= convertedAmount %></td>
+               <td><%= currency %></td>
+               <td><%= results[currency] %></td>
+               <td><%= convertedToNairaResults[currency] %></td>
+               <td><%= profit[currency] %></td> <!-- Display profit for each currency -->
+           </tr>
+       <% }); %>
+   </table>
+
+   <button class="btn"><a href="/dashboard/saveresult">Save Results</a></button>
+</body>
+</html>

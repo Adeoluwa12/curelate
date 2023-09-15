@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/dashboard.css">
+</head>
+<body>
+
+
+    <section class="dash">
+
+        <% if (loggedIn) { %>
+          <h1>Hello, <span class="span"><%= username %>!</span></h1>
+          <% } else { %>
+            <h1>Welcome!</h1>
+            <% } %>
+            <h2>Smart Calculations, Effective results</h2>
+            
+            
+            
+            <div>
+              <div class="yes">
+                <button class="btn" id="btn" > <a href="/user/dashboard/conversion">MANUAL COMPUTATIONS</a></button>
+
+                <button class="btn" id="btn" > <a href="/user/dashboard/autoconversion">AUTOMATED COMPUTATIONS</a></button>
+
+
+                 
+                  <div class="out">
+      
+                    <button class="btn-2" id="btn" > <a href="/user/logout">LOG OUT</a></button>
+                  
+                  </div>
+      
+              </div>
+          </div>
+          
+        </section>
+
+
+</body>
+</html>
+

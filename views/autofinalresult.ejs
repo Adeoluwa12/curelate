@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Conversion Results</title>
+   <link rel="stylesheet" type="text/css" href="/view.css">
+   <style>
+      .green {
+        color: green;
+      }
+      .yellow {
+        color: yellow;
+      }
+      .red {
+        color: red;
+      }
+   </style>
+</head>
+<body>
+   <h1>Conversion Results</h1>
+   <h2>Conversion from <%= selectedCurrency %> to Other Currencies and then back to NGN</h2>
+   <table class="tabili">
+    <h1>Title: <%= selectedCurrency %> </h1>
+       <tr>
+           <th>Initial Naira Amount</th> <!-- Added column for initial Naira Amount -->
+           <th>Amount in <%= selectedCurrency %></th>
+           <th>Currency</th>
+           <th>Converted Amount in each currency</th>
+           <th>Converted Amount in (NGN)</th>
+           <th>Profit</th> <!-- Added column for profit -->
+       </tr>
+       <% const sortedCurrencies = Object.keys(results).sort((a, b) => profit[b] - profit[a]); %>
+       <% for (const currency of sortedCurrencies) { %>
+           <tr>
+               <td><%= nairaAmount %></td> <!-- Display the initial Naira Amount -->
+               <td><%= convertedAmount %></td>
+               <td><%= currency %></td>
+               <td><%= results[currency] %></td>
+               <td><%= convertedToNairaResults[currency] %></td>
+               <% if (profit[currency] > 0.00) { %>
+                   <td class="green"><%= profit[currency] %></td>
+               <% } else if (profit[currency] === 0.00) { %>
+                   <td class="yellow"><%= profit[currency] %></td>
+               <% } else { %>
+                   <td class="red"><%= profit[currency] %></td>
+               <% } %>
+           </tr>
+       <% } %>
+   </table>
+
+   <form action="/user/dashboard/saveresult" method="POST">
+    <button class="btn" type="submit">Save Results</button>
+</form>
+
+</body>
+</html>

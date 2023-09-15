@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Currency Conversion App</title>
+   <link rel="stylesheet" type="text/css" href="/autoindex.css">
+</head>
+<body>
+   <h1>Currency Conversion App</h1>
+   <form action="/user/dashboard/autoconvert" method="post">
+       <label for="nairaAmount">Enter Amount in Naira:</label>
+       <input type="number" step="0.01" name="nairaAmount" required>
+       <label for="selectedCurrency">Select Currency for Conversion:</label>
+       <select name="selectedCurrency" class="select">
+           <% currencies.forEach(currency => { %>
+               <option value="<%= currency %>"><%= currency %></option>
+           <% }); %>
+       </select>
+       <br>
+       <input type="submit" value="Convert">
+   </form>
+</body>
+</html>
