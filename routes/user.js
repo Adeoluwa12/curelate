@@ -97,7 +97,7 @@ req.session.selectedCurrency = selectedCurrency;
 
 //   try {
 //     // Fetch exchange rates for the selected currency
-//     const response = await axios.get(`https://v6.exchangerate-api.com/v6/592041f6817d1d4f1dd5e2c8/latest/${selectedCurrency}`);
+//     const response = await axios.get(`https://v6.exchangerate-api.com/v6/ba6ec08892a87797c2ae0b90/latest/${selectedCurrency}`);
 //     const data = await response.data;
 //     const conversionRates = data.conversion_rates;
 
@@ -180,7 +180,7 @@ router.post('/dashboard/finalcon', async (req, res) => {
   
   try {
     // Fetch exchange rates for the selected currency
-    const response = await axios.get(`https://v6.exchangerate-api.com/v6/592041f6817d1d4f1dd5e2c8/latest/${selectedCurrency}`);
+    const response = await axios.get(`https://v6.exchangerate-api.com/v6/ba6ec08892a87797c2ae0b90/latest/${selectedCurrency}`);
     const data = await response.data;
     const conversionRates = data.conversion_rates;
 
@@ -337,7 +337,7 @@ router.post('/dashboard/autoconvert', async (req, res) => {
 
 
   try {
-    const response = await axios.get(`https://v6.exchangerate-api.com/v6/592041f6817d1d4f1dd5e2c8/latest/NGN`);
+    const response = await axios.get(`https://v6.exchangerate-api.com/v6/ba6ec08892a87797c2ae0b90/latest/NGN`);
     const data = await response.data;
     const exchangeRates = data.conversion_rates;
     const rate = exchangeRates[selectedCurrency];
@@ -369,7 +369,7 @@ router.post('/dashboard/autofinalconvert', async (req, res) => {
 
   try {
     // Fetch exchange rates for the selected currency
-    const response = await axios.get(`https://v6.exchangerate-api.com/v6/592041f6817d1d4f1dd5e2c8/latest/${selectedCurrency}`);
+    const response = await axios.get(`https://v6.exchangerate-api.com/v6/ba6ec08892a87797c2ae0b90/latest/${selectedCurrency}`);
     const data = await response.data;
     const conversionRates = data.conversion_rates;
 
@@ -387,7 +387,7 @@ router.post('/dashboard/autofinalconvert', async (req, res) => {
  
 
     // Fetch exchange rate for NGN to convert back
-    const ngnResponse = await axios.get(`https://v6.exchangerate-api.com/v6/592041f6817d1d4f1dd5e2c8/latest/NGN`);
+    const ngnResponse = await axios.get(`https://v6.exchangerate-api.com/v6/ba6ec08892a87797c2ae0b90/latest/NGN`);
     const ngnData = await ngnResponse.data;
     const ngnConversionRates = ngnData.conversion_rates;
 
